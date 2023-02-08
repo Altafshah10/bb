@@ -20,7 +20,7 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 pbot = Client(
     "bypasserbot",
-    api_id=,
+    api_id="",
     api_hash="",
     bot_token="",
 )
@@ -210,13 +210,10 @@ class Httpx:
 @pbot.on_message(filters.command("start") & filters.private)
 async def start(_: pbot, m: Message):
     await m.reply_text("""
-**Hey there i'm alive! I can bypass many URL Shortener website links**
-You just need to send me the message containing the links! I will replace the un shorted link and send you back!
+**Hey, I can bypass many Shortener website links**
+You just need to send me the message containing the links! I will do rest.!
 Do wait for 10 seconds for each link to process and bypass after sending the links!
-
-**Support: @GreyMatter_Bots!**
-
-**Subscribe: https://youtube.com/@GreyMattersYT**""")
+**""")
     return
 
 
@@ -228,20 +225,20 @@ async def handle_force_sub(bot: Client, cmd: Message):
                            ChatMemberStatus.RESTRICTED):
             await cmd.reply_text(
                 text=
-                "Sorry, You are Banned to use me. Contact my [Support Group](https://t.me/greymatters_bots_discussion).",
+                "Sorry, You are Banned to use me. Contact my [Support](https://t.me/hellboy14).",
                 disable_web_page_preview=True,
             )
             return 0
     except UserNotParticipant:
         try:
             await cmd.reply_text(
-                text="**Please Join My Updates Channel to use me!**\n\n"
+                text="**Please Join My Channel to use me!**\n\n"
                 "Due to Overload, Only Channel Subscribers can use the Bot!",
                 reply_markup=InlineKeyboardMarkup([
                     [
                         InlineKeyboardButton(
-                            "🤖 Join Updates Channel",
-                            url="t.me/GreyMatter_Bots",
+                            "🤖 Join Channel",
+                            url="t.me/deeniyaat00",
                         )
                     ],
                 ]),
@@ -256,7 +253,7 @@ async def handle_force_sub(bot: Client, cmd: Message):
     except Exception:
         await cmd.reply_text(
             text=
-            "Something went Wrong! Contact my [Support Group](https://t.me/greymatters_bots_discussion)",
+            "Something went Wrong! Contact my [Support](https://t.me/hellboy14)",
             disable_web_page_preview=True,
         )
         return 0
