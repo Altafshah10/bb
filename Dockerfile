@@ -14,7 +14,6 @@ RUN apt-get install libxml2-dev libxslt-dev python3-dev -y
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 COPY . .
-RUN rm -rf requirements.txt
 RUN apt-get update && apt-get autoremove -y && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 CMD ["python3.11", "main.py"]
